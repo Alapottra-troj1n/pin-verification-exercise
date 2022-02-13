@@ -38,6 +38,7 @@ calcBody.addEventListener("click", function (e) {
 
 const sumbitBtn = document.querySelector(".submit-btn");
 
+
 sumbitBtn.addEventListener("click", function (){
     let generatedPin = document.querySelector("#random-number-display").value;
     let inputPin = document.querySelector(".input-display").value;
@@ -50,6 +51,19 @@ sumbitBtn.addEventListener("click", function (){
     }else{
         document.querySelector("#matched").style.display = "none";
         document.querySelector("#not-matched").style.display = "block";
+
+        let actionCountText = document.querySelector('#action-count').innerText;
+        if(actionCountText == 0){
+            sumbitBtn.disabled = true;
+        }else{
+            actionCount = parseInt(actionCountText);
+            actionCount--
+            document.querySelector('#action-count').innerText = actionCount;
+        }
+
+  
+
+
     }
 
 });
