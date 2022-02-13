@@ -45,9 +45,11 @@ sumbitBtn.addEventListener("click", function (){
     // let parsedInputPin =parseInt(InputPin);
 
     if(generatedPin == inputPin){
-        console.log("macthed");
+        document.querySelector("#matched").style.display = "block";
+        document.querySelector("#not-matched").style.display = "none";
     }else{
-        console.log('ops');
+        document.querySelector("#matched").style.display = "none";
+        document.querySelector("#not-matched").style.display = "block";
     }
 
 });
